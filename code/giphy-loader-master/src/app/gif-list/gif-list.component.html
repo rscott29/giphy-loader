@@ -1,0 +1,15 @@
+
+<div class="container">
+  <section class="gallery">
+    <app-loading  *ngIf="(status$ | async) == 'loading'"></app-loading>
+    <app-search-bar></app-search-bar>
+    <div class="grid" *ngIf="(status$ | async) == 'success'">
+      <ng-container *ngFor="let vm of vm$ | async">
+        <a class="box-image" href="{{ vm.url }}">
+          <img style="position: relative" ngSrc="{{ vm.image }}" alt="{{vm.title}}" fill/>
+          <div class="box-hover">{{ vm.title }}</div>
+        </a>
+      </ng-container>
+    </div>
+  </section>
+</div>
