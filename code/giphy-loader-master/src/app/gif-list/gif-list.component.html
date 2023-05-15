@@ -6,7 +6,7 @@
     <div class="grid" *ngIf="(status$ | async) == 'success'">
       <ng-container *ngFor="let vm of vm$ | async">
         <a class="box-image" href="{{ vm.url }}">
-          <img style="position: relative" ngSrc="{{ vm.image }}" alt="{{vm.title}}" fill/>
+          <img style="position: relative; height:300px" ngSrc="{{ vm.image }}" alt="{{vm.title}}" fill/>
           <div class="box-hover">{{ vm.title }}</div>
         </a>
       </ng-container>
